@@ -1,0 +1,35 @@
+.q-toggle__thumb .q-icon{
+    padding-left: 10px;
+    opacity: 1;
+    color: #ffffff;
+}
+.q-icon{
+    width: 50px;
+    padding-right:10px ;
+    height: 45px;
+}
+.q-toggle__inner--truthy .q-toggle__thumb .q-icon{
+    color: #050505;
+}
+.q-icon:after{
+    color: #050505;
+}
+.q-toggle__thumb:after{
+    color: #ffffff;
+}
+.q-toggle__thumb::before{
+    color: #000000;
+}
+
+.q-toggle--dark .q-toggle__inner{
+    color: #000;
+}
+.q-toggle__inner--truthy{
+    color: var(--);
+}
+.q-toggle__thumb:after{
+    background: var(--q-dark);
+}
+.q-toggle__inner--truthy{
+    color: #ffffff;
+}
