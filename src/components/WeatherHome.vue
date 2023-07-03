@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref,watch,} from 'vue';
-import { useWeatherNowStore } from 'src/stores/useWeather';
+import { useWeatherStore } from 'src/stores/useWeather';
 import { getWeatherAPI } from '../boot/axios';
 import SearchSelect from './UI/SearchSelect.vue';
 import {useConvertStore} from 'src/stores/useWeather';
@@ -13,7 +13,7 @@ import city from '../stores/city'
 import cityEng from '../stores/cityEng'
 import SwitchTheme from './UI/SwitchTheme.vue';
 
-let store = useWeatherNowStore();
+let store = useWeatherStore();
 
 let { settingTempMetric, langModel,nameCountryAndCity ,nameCountryAndCityEng, modelCity,feel,maxTemp,minTemp,humidity,pressure,windSpeed,deg,time, } = storeToRefs(store);
 let isCollapsed = ref(true);
@@ -47,7 +47,7 @@ onMounted( async() => {
   store.updateWeather(WeatherNow,convertStore.convertDeg, langModel.value)
 })
 
-async function firstCall(data) {
+async function searchCall(data) {
   WeatherNow.value = await WeatherNowAPI(data.modelCity.value,settingTempMetric.value);
   await store.getWeatherToday(data.modelCity.value,settingTempMetric.value);
 
@@ -65,14 +65,9 @@ watch(langModel,(newValue) => {
   store.updateWeather(WeatherNow,convertStore.convertDeg,newValue)
 })
 
-watch(langModel,(newValue) => {
-  store.updateWeather(WeatherNow,convertStore.convertDeg,newValue)
-})
-
 
 let position = 0;
-console.log(window.innerWidth)
-
+// кнопка перелистывания влево
 function moveLeft() {
   let el = document.querySelector('.weather-home-weather-today') as HTMLElement;
 
@@ -102,6 +97,14 @@ function moveLeft() {
       el.style.cssText = `left: ${position}px;`
     } else {
     }
+  }else if(window.innerWidth == 1366) {
+    el.style.left = `${position}px`
+      if(el.style.left !== "0px") {
+      position += 990;
+      console.log(position)
+      el.style.cssText = `left: ${position}px;`
+    } else {
+    }
   }
   else if(window.innerWidth == 1280) {
     el.style.left = `${position}px`
@@ -126,7 +129,7 @@ function moveLeft() {
 
 }
 
-
+// кнопка перелистывания вправо
 function moveRigth() {
 
   let el = document.querySelector('.weather-home-weather-today') as HTMLElement;
@@ -152,6 +155,12 @@ function moveRigth() {
       position += -1044;
       el.style.cssText = `left: ${position}px;`
     }
+  } else if(window.innerWidth == 1366){
+      el.style.cssText = `left: ${position}px;`
+    if(el.style.left !== "-5940px") {
+      position += -990;
+      el.style.cssText = `left: ${position}px;`
+    }
   }
   else if(window.innerWidth == 1280){
       el.style.cssText = `left: ${position}px;`
@@ -168,6 +177,7 @@ function moveRigth() {
     }
   }
 }
+
 function showMob(width: number) : boolean {
   return window.innerWidth <= width ? true : false
 }
@@ -181,24 +191,24 @@ function showMob(width: number) : boolean {
       <div class="xl">
         <search-select
         class="xl"
-        @firstCall="firstCall"
+        @SearchCall="searchCall"
         :stringOptions="stringOptions"
         >
       </search-select>
       </div >
 
-      <div style="margin-left: 760px;" class="row no-wrap reverse items-center justify-between q-pr-xl xl xl-margin">
+      <div  class="row no-wrap reverse items-center justify-between q-pr-xl xl xl-margin">
           <switch-theme ></switch-theme>
           <switch-lang  ></switch-lang>
           <switch-temp-button ></switch-temp-button>
       </div>
       <search-select
         class="lg"
-        @firstCall="firstCall"
+        @searchCall="searchCall"
         :stringOptions="stringOptions"
         >
       </search-select>
-      <div style="margin-left: 730px;" class="row no-wrap reverse items-center justify-between q-pr-xl lg lg-margin">
+      <div class="row no-wrap reverse items-center justify-between q-pr-xl lg lg-margin">
           <switch-theme ></switch-theme>
           <switch-lang  ></switch-lang>
           <switch-temp-button ></switch-temp-button>
@@ -206,7 +216,7 @@ function showMob(width: number) : boolean {
 
       <search-select
         class="md"
-        @firstCall="firstCall"
+        @searchCall="searchCall"
         :stringOptions="stringOptions"
         >
       </search-select>
@@ -219,7 +229,7 @@ function showMob(width: number) : boolean {
        <search-select
         v-show="showMob(414)"
         class="xs"
-        @firstCall="firstCall"
+        @searchCall="searchCall"
         :stringOptions="stringOptions"
         >
       </search-select>

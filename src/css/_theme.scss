@@ -15,7 +15,7 @@
         color: var(--q-dark-font-color);
     }
 
-    
+
     .q-search-select {
         .q-field__control{
             background: none;
@@ -46,33 +46,37 @@
             background: var(--q-dark-background);
         }
     }
-    
+
     .weather-today-item{
         background: var(--q-dark-background);
         color: var(--q-dark-font-color);
     }
     .weather-home-weather-today-svg-left{
-        
+
         background: var(--q-dark-background) no-repeat;
         background-image: url(../assets//svg/left_arrow_white.png) ;
         background-size:32px 32px ;
         background-position: center center;
     }
     .weather-home-weather-today-svg-right{
-        
+
         background: var(--q-dark-background) no-repeat;
         background-image: url(../assets//svg/right_arrow_white.png) ;
         background-size:32px 32px ;
         background-position: center center;
     }
+
     .q-item__section{
+        padding-left: 2%;
         height: 56px;
         background: var(--q-dark-background);
         border-radius: 15px;
         .q-icon{
             color: var(--q-dark-font-color);
         }
-    } 
+    }
+
+
 }
 
 .body--light {
@@ -89,7 +93,7 @@
         color: var(--q-light-font-color);
     }
 
-    
+
     .q-search-select {
         .q-field__control{
             background: none;
@@ -120,27 +124,27 @@
             background: var(--q-light-background);
         }
     }
-    
+
     .weather-today-item{
         background: var(--q-light-background);
         color: var(--q-light-font-color);
     }
     .weather-home-weather-today-svg-left{
-        
+
         background: var(--q-light-background) no-repeat;
         background-image: url(../assets//svg/left_arrow_dark.png) ;
         background-size:32px 32px ;
         background-position: center center;
     }
     .weather-home-weather-today-svg-right{
-        
+
         background: var(--q-light-background) no-repeat;
         background-image: url(../assets//svg/right_arrow_dark.png) ;
         background-size:32px 32px ;
         background-position: center center;
     }
-    
-        
+
+
         .q-item__section{
             height: 56px;
             background: var(--q-light-background);
@@ -148,7 +152,6 @@
             .q-icon{
                 color: var(--q-light-font-color);
             }
-        } 
-    
+        }
+
 }
-    

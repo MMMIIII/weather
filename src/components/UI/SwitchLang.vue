@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useWeatherNowStore } from 'src/stores/useWeather';
+import { useWeatherStore } from 'src/stores/useWeather';
 
 let options: string[] = ["Русский","English"]
 
-let {langModel} = storeToRefs(useWeatherNowStore())
+let {langModel} = storeToRefs(useWeatherStore())
 
 </script>
 
@@ -16,6 +16,7 @@ let {langModel} = storeToRefs(useWeatherNowStore())
         :options="options"
         :hide-dropdown-icon="true"
         options-selected-class="opa"
+
     >
     </q-select>
 
@@ -25,7 +26,7 @@ let {langModel} = storeToRefs(useWeatherNowStore())
         v-model="langModel"
         :options="options"
         :hide-dropdown-icon="true"
-        options-selected-class="opa"
+
     >
     </q-select>
     <q-select
@@ -34,7 +35,7 @@ let {langModel} = storeToRefs(useWeatherNowStore())
         v-model="langModel"
         :options="options"
         :hide-dropdown-icon="true"
-        options-selected-class="opa"
+
     >
     </q-select>
     <q-select
@@ -43,7 +44,7 @@ let {langModel} = storeToRefs(useWeatherNowStore())
         v-model="langModel"
         :options="options"
         :hide-dropdown-icon="true"
-        options-selected-class="opa"
+
     >
     </q-select>
 </template>

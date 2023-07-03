@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useWeatherNowStore } from 'src/stores/useWeather';
+import { useWeatherStore } from 'src/stores/useWeather';
 
 let props = defineProps({
   settingTempMetric : String,
@@ -14,11 +14,11 @@ let props = defineProps({
   time :  Number,
 })
 
-let store = useWeatherNowStore();
+let store = useWeatherStore();
 let {langModel} = storeToRefs(store)
 
-function showPlus() {
-  return props.settingTempMetric === "metric" ? true : false
+function showPlus(temp : any) {
+  return props.settingTempMetric  === "metric" && temp > 0 ? true : false
 }
 
 function langShow() {
@@ -31,21 +31,21 @@ function langShow() {
   <section class="weather-now">
     <div class="now-info">
       <div class="temp-feel">
-        <span> <span v-show="showPlus()">+</span>{{ feel }}°</span>
+        <span> <span v-show="showPlus(feel)">+</span>{{ feel }}°</span>
       </div>
 
       <div class="info-wrap">
 
         <div class="min-temp">
           <p class="info-description"><span v-show="langShow()" >Макс.т.</span> <span v-show="!langShow()" >Max.t.</span>
-                                      <span v-show="showPlus()">°C</span> <span v-show="!showPlus()">°F</span> </p>
-                                      <span><span v-show="showPlus()">+</span>{{ minTemp }}°</span>
+                                      <span v-show="langShow()">°C</span> <span v-show="!langShow()">°F</span> </p>
+                                      <span><span v-show="showPlus(minTemp)">+</span>{{ minTemp }}°</span>
         </div>
 
         <div class="max-temp">
           <p class="info-description"> <span v-show="langShow()" >Мин.т.</span> <span v-show="!langShow()" >Min.t.</span>
-            <span v-show="showPlus()">°C</span> <span v-show="!showPlus()">°F</span></p>
-          <span><span v-show="showPlus()">+</span>{{ maxTemp }}°</span>
+            <span v-show="showPlus(maxTemp)">°C</span> <span v-show="!showPlus(maxTemp)">°F</span></p>
+          <span><span v-show="showPlus(maxTemp)">+</span>{{ maxTemp }}°</span>
         </div>
 
         <div class="humidity">
@@ -66,8 +66,8 @@ function langShow() {
       <p class="info-description"></p>
       <span> {{windSpee }} </span>
       <div>
-        <p class="wind-description" v-show="langShow()"> <span v-show="showPlus()">метр/с</span> <span v-show="!showPlus()">мили/час</span></p>
-        <p class="wind-description" v-show="!langShow()"> <span v-show="showPlus()">meter/s</span> <span v-show="!showPlus()">miles/h</span></p>
+        <p class="wind-description" v-show="langShow()"> <span v-show="langShow()">метр/с</span> <span v-show="!langShow()">мили/час</span></p>
+        <p class="wind-description" v-show="!langShow()"> <span v-show="langShow()">meter/s</span> <span v-show="!langShow()">miles/h</span></p>
         <p class="wind-description">{{ deg }}</p>
       </div>
     </div>

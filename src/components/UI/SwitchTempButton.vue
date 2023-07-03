@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { useWeatherNowStore } from 'src/stores/useWeather';
+import {useWeatherStore } from 'src/stores/useWeather';
 import { watch } from 'vue';
 
 
-let {tempMetric} = storeToRefs(useWeatherNowStore())
+let {tempMetric} = storeToRefs(useWeatherStore())
 
 watch(tempMetric,(newValue) => {
-    useWeatherNowStore().tempMetricModifi(newValue);
+    useWeatherStore().tempMetricModifi(newValue);
 })
 
 let options: string[] = ["F°","C°"]

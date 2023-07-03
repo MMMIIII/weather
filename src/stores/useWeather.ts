@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import city from './city';
 import { getWeatherAPI } from '../boot/axios';
 
-export const useWeatherNowStore = defineStore('WeatherNow', () => {
+export const useWeatherStore = defineStore('Weather', () => {
   const feel = ref<number>();
   const maxTemp = ref<number>();
   const minTemp = ref<number>();

@@ -27,12 +27,12 @@ function filterFnAutoselect (val: string, update: Function) {
   )
 }
 
-const emit = defineEmits(['firstCall']);
+const emit = defineEmits(['searchCall']);
 
 let modelCity = ref("Бишкек");
 
 watch(modelCity,() => {
-  emit('firstCall',{
+  emit('searchCall',{
   modelCity: modelCity
 });
 
