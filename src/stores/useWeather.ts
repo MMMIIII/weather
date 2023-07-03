@@ -4,6 +4,7 @@ import city from './city';
 import { getWeatherAPI } from '../boot/axios';
 
 export const useWeatherStore = defineStore('Weather', () => {
+  // переменные для общего использования
   const feel = ref<number>();
   const maxTemp = ref<number>();
   const minTemp = ref<number>();
@@ -19,6 +20,7 @@ export const useWeatherStore = defineStore('Weather', () => {
   const langModel = ref<string>("Русский");
   const nameCountryAndCity = ref(city);
 
+  // функция переобразует модель в значение для отправки на сервер
   function tempMetricModifi(tempMetric: string): void {
     if (tempMetric === "C°") {
       settingTempMetric.value = "metric";
@@ -26,7 +28,7 @@ export const useWeatherStore = defineStore('Weather', () => {
       settingTempMetric.value = "imperial";
     }
   }
-
+  // функция обновляет данные
   function updateWeather(WeatherNow: any, func: Function, lang: string): void {
     feel.value = Math.round(WeatherNow.value.main.feels_like);
     maxTemp.value = Math.round(WeatherNow.value.main.temp_max);
@@ -37,7 +39,7 @@ export const useWeatherStore = defineStore('Weather', () => {
     deg.value = func(WeatherNow.value.wind.deg, lang);
     time.value = WeatherNow.value.dt;
   }
-
+  // функция получения данных с сервера
   async function getWeatherToday(data: any, tempMetric: string): Promise<void> {
     daysAPI.value = await getWeatherAPI(data, tempMetric, "forecast");
   }
@@ -64,6 +66,7 @@ export const useWeatherStore = defineStore('Weather', () => {
 });
 
 export const useConvertStore = defineStore('useConvert', () => {
+  // функция преобразоания и перевод направления ветра 
   function convertDeg(deg: number, langMode: string): string {
     if (langMode === "Русский") {
       return 0 < deg && deg <= 45 ? "северный" :
