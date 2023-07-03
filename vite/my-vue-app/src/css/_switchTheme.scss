@@ -1,0 +1,38 @@
+.q-toggle__thumb .q-icon{
+    padding-left: 10px;
+}
+.q-icon{
+    width: 50px;
+    padding-right:10px ;
+    height: 45px;
+}
+
+.q-toggle__thumb:after{
+    background: var(--q-dark);
+}
+
+.q-toggle--dark{
+    color: #000;
+}
+
+.q-toggle{
+    .q-toggle__inner--truthy .q-toggle__thumb .q-icon{
+        color: #000;
+    }
+    .q-icon{
+        opacity: 1;
+        color: #ffffff;
+        
+    } 
+    .q-toggle__inner--truthy{
+
+        color: var( --q-dark-page);
+        
+        .q-toggle__thumb:after{
+            color: #ffffff;
+        }
+        .q-toggle__thumb:before{
+            color: #000000;
+        }
+    }
+}

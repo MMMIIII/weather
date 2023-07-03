@@ -1,0 +1,165 @@
+.body--dark {
+        background-image: url(../assets/img/cloudEvening1.jpg);
+        background-size:cover ;
+    .q-field__native {
+        color: #ffffff;
+        span{
+            width:450px;
+            text-align: center;
+            color: var(--q-dark-font-color);
+        }
+    }
+    .switch-temp-button,.switch-lang{
+        background: var(--q-dark-background);
+        border-radius: 10px;
+        color: var(--q-dark-font-color);
+    }
+
+
+    .q-search-select {
+        .q-field__control{
+            background: none;
+            .q-field__native{
+                background: var(--q-dark-background);
+                border-radius: 15px;
+                margin: 0;
+                .q-field__input{
+                    color: var(--q-dark-font-color);
+                    height: 70px;
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+
+
+    .q-field__native {
+        span{
+            width:450px;
+            text-align: center;
+        }
+    }
+    .weather-now {
+        border-radius: 15px;
+        .now-info{
+            color: var(--q-dark-font-color);
+            background: var(--q-dark-background);
+        }
+    }
+
+    .weather-today-item{
+        background: var(--q-dark-background);
+        color: var(--q-dark-font-color);
+    }
+    .weather-home-weather-today-svg-left{
+
+        background: var(--q-dark-background) no-repeat;
+        background-image: url(../assets//svg/left_arrow_white.png) ;
+        background-size:32px 32px ;
+        background-position: center center;
+    }
+    .weather-home-weather-today-svg-right{
+
+        background: var(--q-dark-background) no-repeat;
+        background-image: url(../assets//svg/right_arrow_white.png) ;
+        background-size:32px 32px ;
+        background-position: center center;
+    }
+
+    .q-item__section{
+        padding-left: 2%;
+        height: 56px;
+        background: var(--q-dark-background);
+        border-radius: 15px;
+        .q-icon{
+            color: var(--q-dark-font-color);
+        }
+    }
+    .q-toggle{
+        .q-icon{
+            opacity: 1;
+            color: #ffffff;
+        } 
+        .q-toggle__thumb:after{
+            background-color: #202020;
+        } 
+        
+    }
+}
+
+.body--light {
+    .q-field__native {
+        span{
+            width:450px;
+            text-align: center;
+            color: var(--q-light-font-color);
+        }
+    }
+    .switch-temp-button,.switch-lang{
+        background: var(--q-light-background);
+        border-radius: 10px;
+        color: var(--q-light-font-color);
+    }
+
+   
+    .q-search-select {
+        background: none;
+        .q-field__control{
+            background: none;
+            .q-field__native{
+                background: var(--q-light-background);
+                margin: 0;
+                .q-field__input{
+                    height: 70px;
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+
+
+    .q-field__native {
+        color: #000000;
+        span{
+            width:450px;
+            text-align: center;
+        }
+    }
+    .weather-now {
+        border-radius: 15px;
+        .now-info{
+            color: var(--q-light-font-color);
+            background: var(--q-light-background);
+        }
+    }
+
+    .weather-today-item{
+        background: var(--q-light-background);
+        color: var(--q-light-font-color);
+    }
+    .weather-home-weather-today-svg-left{
+
+        background: var(--q-light-background) no-repeat;
+        background-image: url(../assets//svg/left_arrow_dark.png) ;
+        background-size:32px 32px ;
+        background-position: center center;
+    }
+    .weather-home-weather-today-svg-right{
+
+        background: var(--q-light-background) no-repeat;
+        background-image: url(../assets//svg/right_arrow_dark.png) ;
+        background-size:32px 32px ;
+        background-position: center center;
+    }
+
+
+        .q-item__section{
+            height: 56px;
+            background: var(--q-light-background);
+            border-radius: 15px;
+            .q-icon{
+                color: var(--q-light-font-color);
+            }
+        }
+
+}
