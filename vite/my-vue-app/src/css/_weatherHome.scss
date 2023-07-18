@@ -1,0 +1,73 @@
+.weather-home {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(../assets/img/cloudEvening1.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+
+.weather-home-UI {
+  display: flex;
+  width: 92%;
+  height: 20%;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px ;
+
+
+}
+.weather-home-UI-group {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+  align-items: center;
+}
+}
+
+  .weather-home-weather-today-svg-left{
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 145px;
+    bottom: 300px;
+    width: 60px;  
+    height: 60px;
+    background: #0000003f;
+    border-radius: 15px;
+    z-index: 2;
+}.weather-home-weather-today-svg-left:hover{
+  cursor: pointer;
+}
+  .weather-home-weather-today-svg-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 15px;
+    bottom: 300px;
+    width: 60px;  
+    height: 60px;
+    background: #0000003f;
+    border-radius: 15px;
+  }.weather-home-weather-today-svg-right {
+    cursor: pointer;
+  }
+
+
+.weather-home-weather-today-wrapper{
+      position: absolute;
+      overflow: hidden;
+      width: 1480px;
+      left: 445px;
+      height: 245px;
+      bottom: 50px;
+  .weather-home-weather-today{
+    position: absolute;
+    bottom: 15px;
+    height: 200px;
+    padding: 15px;
+    color: #fff;
+  }
+}   
