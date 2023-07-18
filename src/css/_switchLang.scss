@@ -1,0 +1,30 @@
+.switch-lang {
+    width: 150px;
+    height: 65px;
+
+    .q-field__control:before,
+    .q-field__control:after {
+        transition: none;
+        content: none;
+    }
+
+    .q-field__control-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .q-field__native {
+        font-size: 27px;
+        display: flex;
+        justify-content: center;
+
+        span {
+            text-align: center;
+        }
+    }
+
+    .q-field__control-container {
+        display: flex;
+        align-items: center;
+    }
+}

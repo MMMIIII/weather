@@ -1,0 +1,27 @@
+:root {
+    --q-light-font-color: #000;
+    --q-light-background: #ffffff66;
+    --q-dark-font-color: #ffffff;
+    --q-dark-background: #00000059;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+@import './_weatherHome.scss';
+@import './_weatherTodayItem.scss';
+@import './_weatherNow.scss';
+@import './_theme.scss';
+@import './_searchSelect.scss';
+@import './_switchTheme.scss';
+@import './_switchLang.scss';
+@import './_switchTempButton.scss';
+@import './adaptive';

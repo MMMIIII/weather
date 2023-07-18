@@ -1,0 +1,31 @@
+.switch-temp-button {
+    width: 110px;
+    height: 65px;
+    padding-top: 5px;
+    padding-left: 12px;
+
+    .q-field__control-container {
+        font-size: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .q-field__native {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            width: 450px;
+            text-align: center;
+        }
+    }
+
+    .q-field__control:before,
+    .q-field__control:after {
+        transition: none;
+
+        content: none;
+    }
+
+}
